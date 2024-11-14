@@ -8,15 +8,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
+
 private final ProductService service;
+
 public ProductController(ProductService service) {
 this.service = service;
 }
+
 @PostMapping
-public ResponseEntity<Product> createProduct(@RequestBody Product
-product) {
-return new ResponseEntity<>(service.createProduct(product),
-HttpStatus.CREATED);
+public ResponseEntity<Product> createProduct(@RequestBody Product product) {
+return new ResponseEntity<>(service.createProduct(product), HttpStatus.CREATED);
 }
 @GetMapping
 public List<Product> getAllProducts() {

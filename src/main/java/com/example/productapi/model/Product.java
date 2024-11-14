@@ -1,5 +1,6 @@
 package com.example.productapi.model;
 import jakarta.persistence.*;
+
 @Entity
 public class Product {
 @Id
