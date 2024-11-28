@@ -12,14 +12,17 @@ public class ProductService {
     private final ProductRepository repository;
 
     public ProductService(ProductRepository repository) {
+
         this.repository = repository;
     }
 
     public List<Product> getAllProducts() {
+
         return repository.findAll();
     }
 
     public Optional<Product> getProductById(Long id) {
+
         return repository.findById(id);
     }
 
@@ -36,6 +39,7 @@ public class ProductService {
     }
 
     public void deleteProduct(Long id) {
+
         repository.deleteById(id);
     }
 }
