@@ -18,3 +18,18 @@ spring:
           keycloak:
             issuer-uri: http://localhost:8080/realms/spring-boot-realm
 
+
+
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  - job_name: "product-api"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["localhost:8082"]
+
